@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        // Adiciona a classe 'destaque' ao elemento com o ID 'primeiro'
+        document.getElementById('primeiro').classList.add('destaque');
+
+        // Obtém todos os elementos 'div' do documento
+        const divs = document.getElementsByTagName('div');
+
+        // Remove a classe 'destaque' de todos os elementos 'div' obtidos anteriormente
+        Array.from(divs).forEach(element => element.classList.remove('destaque'));
+        // O método 'Array.from' é utilizado para transformar a coleção HTML retornada por 'getElementsByTagName'
+        // em um array, para que possamos utilizar métodos de array, como 'forEach'.
+
+        // Cria um novo array 'divsArray' utilizando o operador spread para copiar os elementos do array 'divs'
+        const divsArray = [...divs];
+
+        // Adiciona a classe 'destaque' a todos os elementos do novo array 'divsArray'
+        divsArray.forEach(element => element.classList.add('destaque'));
+
+        // Obtém todos os elementos com a classe 'ultimo'
+        const ultimosElementos = document.getElementsByClassName('ultimo');
+
+        // Remove a classe 'destaque' de todos os elementos com a classe 'ultimo'
+        for (let element of ultimosElementos) {
+            element.classList.remove('destaque');
+        }
+    </script>
+</body>
+</html>

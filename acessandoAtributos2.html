@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        // Seleciona o elemento 'ul' dentro de um elemento 'div' com o atributo 'destino' igual a 'escritório'
+        const lista = document.querySelector('div ul[destino="escritório"]');
+    
+        // Imprime informações sobre o elemento 'ul' no console
+        console.log('Elemento "ul"...........');
+        console.log('childNodes', lista.childNodes); // Imprime os nós filhos do elemento 'ul'
+        console.log('destino', lista.destino); // Imprime o valor da propriedade 'destino' (que não existe)
+        console.log('getAttribute', lista.getAttribute('destino')); // Obtém o valor do atributo 'destino' usando getAttribute
+        console.log('hasAttribute', lista.hasAttribute('destino')); // Verifica se o elemento possui o atributo 'destino'
+        lista.setAttribute('destino', 'empresa'); // Define o valor do atributo 'destino' como 'empresa'
+        lista.setAttribute('status', 'aberto'); // Define o valor do atributo 'status' como 'aberto'
+        lista.removeAttribute('destino'); // Remove o atributo 'destino' do elemento 'ul'
+        console.log(lista.dataset.urgencia); // Obtém o valor do atributo de dados 'urgencia' usando a propriedade dataset
+        lista.dataset.urgencia = 4; // Define o valor do atributo de dados 'urgencia' como 4
+        console.log(lista.getAttribute('data-urgencia')); // Obtém o valor do atributo 'data-urgencia' usando getAttribute
+    
+        // Cuidado com o uso do atributo 'for' em elementos label
+        const label = document.querySelector('label');
+        console.log(label.for); // Obtém o valor do atributo 'for' usando a propriedade 'for' (que é uma palavra reservada)
+        console.log(label.htmlFor); // Obtém o valor do atributo 'for' usando a propriedade 'htmlFor'
+        console.log(label.getAttribute('for')); // Obtém o valor do atributo 'for' usando getAttribute
+    </script>
+    
+</body>
+
+</html>

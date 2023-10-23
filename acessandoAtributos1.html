@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+    // Seleciona o primeiro elemento 'img' encontrado no documento
+    const img = document.querySelector('img');
+
+    // Obtém o valor do atributo 'src' da imagem e imprime no console
+    console.log('getAttribute', img.getAttribute('src'));
+
+    // Obtém o valor da propriedade 'src' da imagem e imprime no console
+    console.log('src', img.src);
+
+    // Obtém o valor da propriedade 'src' da imagem usando a notação de colchetes e imprime no console
+    console.log('["src"]', img['src']);
+
+    // Obtém o valor da propriedade 'alt' da imagem e imprime no console
+    console.log('alt', img.alt);
+
+    // Imprime informações sobre o elemento 'img' no console
+    console.log('Elemento "img" ............');
+    console.log('Nodetype', img.nodeType); // Tipo do nó do elemento
+    console.log('NodeName', img.nodeName); // Nome do nó do elemento
+
+    // Obtém o objeto de atributo para o atributo 'src' da imagem
+    const src = img.getAttributeNode('src');
+
+    // Imprime informações sobre o atributo 'src' no console
+    console.log('Atributo "src".............');
+    console.log('NodeType', src.nodeType); // Tipo do nó do atributo
+    console.log('NodeName', src.nodeName); // Nome do nó do atributo
+    console.log('NodeValue', src.nodeValue); // Valor do nó do atributo
+
+    // Seleciona o primeiro elemento 'a' encontrado no documento
+    const link = document.querySelector('a');
+
+    // Obtém o valor da propriedade 'href' do link e imprime no console
+    console.log('Elemento "a".............');
+    console.log('href', link.href);
+
+    // Obtém o tipo do primeiro nó filho do link e imprime no console
+    console.log('firstChild.nodeType', link.firstChild.nodeType);
+
+    // Define um novo valor para o conteúdo do primeiro nó filho do link
+    link.firstChild.nodeValue = 'Novo Texto';
+    </script>
+
+</body>
+
+</html>
